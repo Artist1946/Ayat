@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Ayat -  الآيات </title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png">
+</head>
+
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-wrap">
+        <!-- حط شعارك هنا: logo.png داخل نفس المجلد -->
+        <img class="logo" src="logo.png" alt="Ayat" />
+      </div>
+
+      <div class="brand-text">
+        <div class="title"> Ayat </div>
+        <div class="subtitle"> الآيات</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <div class="pill">﴿ القرآن الكريم ﴾</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <div class="controls">
+        <div class="control">
+          <label class="label">السورة</label>
+          <select id="surahSelect" data-testid="select-surah"></select>
+        </div>
+
+        <div class="control">
+          <label class="label">القارئ</label>
+          <select id="reciterSelect" data-testid="select-reciter"></select>
+        </div>
+<div class="player-controls">
+  <input id="playInput" type="text" placeholder="ادخل رقم الآية أو اتركه للسورة كاملة" />
+  <button id="playBtn" class="play"> ▶  تشغيل</button>
+  <button id="stopBtn" class="stop"> ⏹  إيقاف</button>
+  <span id="nowPlaying" class="now-playing"></span>
+</div>
+
+        <div class="control search">
+          <label class="label">بحث داخل السورة</label>
+          <input
+            id="searchInput"
+            data-testid="input-search"
+            type="text"
+            placeholder="ابحث عن آية أو كلمة"
+          />
+        </div>
+      </div>
+
+      <div class="search-results" id="searchResults" data-testid="list-search-results"></div>
+    </section>
+
+    <section class="container" id="quranContainer" data-testid="container-quran"></section>
+
+    <footer class="footer">
+     Ayat -  الآيات 
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

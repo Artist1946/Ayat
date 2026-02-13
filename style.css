@@ -1,0 +1,126 @@
+:root{
+  --gold:#d4af37;
+  --deep:#06110d;
+  --green:#0e2a1f;
+}
+
+body{
+  margin:0;
+  font-family:'Amiri',serif;
+  background:
+    radial-gradient(circle at top, rgba(212,175,55,0.15), transparent 60%),
+    linear-gradient(180deg,#030806,#06110d);
+  height:100vh;
+  color:white;
+  overflow:hidden;
+}
+
+/* إطار ذهبي خفيف حول الصفحة */
+body::after{
+  content:"";
+  position:absolute;
+  inset:15px;
+  border:1px solid rgba(212,175,55,0.4);
+  border-radius:25px;
+  pointer-events:none;
+}
+
+/* زخرفة علوية */
+.top-ornament{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:300px;
+  height:120px;
+  background:radial-gradient(circle,var(--gold),transparent 70%);
+  opacity:0.08;
+}
+
+/* الحاوية */
+.container{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+/* العنوان */
+h1{
+  font-size:70px;
+  color:var(--gold);
+  margin-bottom:10px;
+  letter-spacing:4px;
+  text-shadow:0 0 30px rgba(212,175,55,0.7);
+}
+
+.subtitle{
+  font-size:20px;
+  opacity:0.8;
+  margin-bottom:60px;
+  letter-spacing:1px;
+}
+
+/* الأزرار */
+.buttons{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  position:relative;
+  padding:22px 60px;
+  font-size:22px;
+  border-radius:60px;
+  border:2px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  background:linear-gradient(145deg,#0e2a1f,#0a2017);
+  box-shadow:
+    0 0 15px rgba(212,175,55,0.3),
+    inset 0 0 10px rgba(212,175,55,0.1);
+  transition:0.4s;
+  overflow:hidden;
+}
+
+/* تأثير لمعان متحرك */
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-75%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  transform:skewX(-20deg);
+}
+
+.btn:hover::before{
+  animation:shine 1s forwards;
+}
+
+@keyframes shine{
+  100%{left:130%;}
+}
+
+.btn:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 0 25px rgba(212,175,55,0.7),
+    0 10px 40px rgba(0,0,0,0.6);
+  background:var(--gold);
+  color:#06110d;
+}
+
+footer{
+  position:absolute;
+  bottom:25px;
+  font-size:14px;
+  opacity:0.6;
+  letter-spacing:1px;
+}

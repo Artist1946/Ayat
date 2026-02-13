@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>السنن النبوية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logo.png">
+</head>
+
+<body>
+ <div class="bg-orbs"></div>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="logo-wrap">
+            <img class="logo" src="logo.png" alt="AyatHub" />
+        </div>
+
+        <div class="brand-text">
+            <div class="title">Ayat - الآيات</div>
+            <div class="subtitle"> السنن النبوية</div>
+        </div>
+    </div>
+
+    <div class="pill"> 🌿 السنن النبوية  </div>
+</header>
+  
+<header class="header">
+    <h1>السنن النبوية</h1>
+    <p>سنن الوضوء والصلاة</p>
+</header>
+
+<main>
+
+<div class="controls">
+    <div class="tabs">
+        <button class="tab active" onclick="filterItems('all')">الكل</button>
+        <button class="tab" onclick="filterItems('wudu')">الوضوء</button>
+        <button class="tab" onclick="filterItems('salah')">الصلاة</button>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="ابحث عن سنة...">
+</div>
+
+<section id="cardContainer" class="grid"></section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
