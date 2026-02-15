@@ -3,69 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تسجيل دخول</title>
+<title>دخول فاخر</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+:root{
+  --gold:#d4af37;
+  --deep:#06110d;
+  --green:#0e2a1f;
 }
 
 body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: linear-gradient(135deg,#667eea,#764ba2);
+  margin:0;
+  font-family:'Amiri',serif;
+  background:
+    radial-gradient(circle at top, rgba(212,175,55,0.15), transparent 60%),
+    linear-gradient(180deg,#030806,#06110d);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
 }
 
 .container{
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    padding:40px;
-    border-radius:20px;
-    width:350px;
-    text-align:center;
-    color:white;
-    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  background: rgba(14,42,31,0.6);
+  padding:50px;
+  border-radius:20px;
+  width:350px;
+  text-align:center;
+  backdrop-filter: blur(10px);
+  border:1px solid rgba(212,175,55,0.3);
+  box-shadow:0 0 40px rgba(212,175,55,0.2);
 }
 
-.container h2{
-    margin-bottom:20px;
-    font-weight:600;
+h2{
+  color:var(--gold);
+  margin-bottom:25px;
+  font-size:28px;
 }
 
 input{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    margin-bottom:15px;
-    outline:none;
-    font-size:16px;
+  width:100%;
+  padding:12px;
+  margin-bottom:20px;
+  border-radius:10px;
+  border:1px solid var(--gold);
+  background:rgba(0,0,0,0.4);
+  color:white;
+  font-size:16px;
+  outline:none;
+}
+
+input:focus{
+  box-shadow:0 0 10px var(--gold);
 }
 
 button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background: linear-gradient(90deg,#00c6ff,#0072ff);
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--gold),#b8962e);
+  color:#06110d;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 button:hover{
-    transform:scale(1.05);
+  transform:scale(1.05);
+  box-shadow:0 0 20px var(--gold);
 }
 
 #error{
-    margin-top:10px;
-    color:#ffb3b3;
+  margin-top:15px;
+  color:#ff4d4d;
 }
 </style>
 </head>
@@ -73,25 +85,25 @@ button:hover{
 <body>
 
 <div class="container">
-    <h2>🔐 أدخل الباسورد</h2>
-    <input type="password" id="password" placeholder="اكتب الباس هنا">
-    <button onclick="login()">دخول</button>
-    <div id="error"></div>
+  <h2>🔐 تسجيل الدخول</h2>
+  <input type="password" id="password" placeholder="أدخل الباسورد">
+  <button onclick="login()">دخول</button>
+  <div id="error"></div>
 </div>
 
 <script>
-    const correctPassword = "1234"; // 👈 غير الباس هنا
+  const correctPassword = "1234";
 
-    function login(){
-        const pass = document.getElementById("password").value;
-        const error = document.getElementById("error");
+  function login(){
+    const pass = document.getElementById("password").value;
+    const error = document.getElementById("error");
 
-        if(pass === correctPassword){
-            window.location.href = "web.html"; // 👈 الصفحة الثانية
-        } else {
-            error.innerHTML = "الباسورد غير صحيح ❌";
-        }
+    if(pass === correctPassword){
+      window.location.href = "web.html";
+    } else {
+      error.innerHTML = "الباسورد غير صحيح";
     }
+  }
 </script>
 
 </body>
