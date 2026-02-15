@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل دخول</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.container{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding:40px;
+    border-radius:20px;
+    width:350px;
+    text-align:center;
+    color:white;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+.container h2{
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:15px;
+    outline:none;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background: linear-gradient(90deg,#00c6ff,#0072ff);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#error{
+    margin-top:10px;
+    color:#ffb3b3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🔐 أدخل الباسورد</h2>
+    <input type="password" id="password" placeholder="اكتب الباس هنا">
+    <button onclick="login()">دخول</button>
+    <div id="error"></div>
+</div>
+
+<script>
+    const correctPassword = "1234"; // 👈 غير الباس هنا
+
+    function login(){
+        const pass = document.getElementById("password").value;
+        const error = document.getElementById("error");
+
+        if(pass === correctPassword){
+            window.location.href = "web.html"; // 👈 الصفحة الثانية
+        } else {
+            error.innerHTML = "الباسورد غير صحيح ❌";
+        }
+    }
+</script>
+
+</body>
+</html>
