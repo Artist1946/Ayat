@@ -1,4 +1,4 @@
-  const correctPassword = "1437";
+  const correctPassword = "قراني";
 
   function login(){
     const pass = document.getElementById("password").value;
